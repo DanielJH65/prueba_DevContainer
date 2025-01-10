@@ -3,7 +3,21 @@
 {
 	"name": "Ubuntu",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:jammy"
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"oven.bun-vscode",
+				"ms-mssql.data-workspace-vscode",
+				"ms-mssql.sql-bindings-vscode",
+				"ms-mssql.sql-database-projects-vscode",
+				"ms-mssql.mssql",
+				"GitHub.github-vscode-theme",
+				"PKief.material-icon-theme"
+			],
+			"theme": "GitHub Dark Dimmed"
+		}
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
