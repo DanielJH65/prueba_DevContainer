@@ -1,33 +1,24 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
-	"name": "Ubuntu",
+	"name": "C# (.NET)",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-	"runArgs": ["--network", "host"],
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"oven.bun-vscode",
-				"ms-mssql.data-workspace-vscode",
-				"ms-mssql.sql-bindings-vscode",
-				"ms-mssql.sql-database-projects-vscode",
-				"ms-mssql.mssql",
-				"GitHub.github-vscode-theme",
-				"PKief.material-icon-theme"
-			],
-			"theme": "GitHub Dark Dimmed"
-		}
-	}
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-9.0-bookworm",
+	"runArgs": ["--network", "host", "--name", "testDevContainer"],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	// "forwardPorts": [5093],
+	// "portsAttributes": {
+	//		"5001": {
+	//			"protocol": "https"
+	//		}
+	// }
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	// "postCreateCommand": "dotnet restore",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
