@@ -10,6 +10,17 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(dbConnection);
 });
 
+builder.Services.AddCors(options =>
+    {
+        options.AddPolicy(name: "AllowAnyOrigins",
+            builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
+            });
+    });
+
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -34,6 +45,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseSwagger();
 }
+
+app.UseCors("AllowAnyOrigins");
 
 app.UseAuthorization();
 

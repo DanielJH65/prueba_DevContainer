@@ -1,6 +1,7 @@
 
 using api.Data;
 using api.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ namespace api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[EnableCors("AllowAnyOrigins")]
 public class UsersController : ControllerBase
 {
     private readonly ILogger<UsersController> _logger;
